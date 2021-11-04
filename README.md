@@ -18,8 +18,8 @@ The topics covered in the exercises are the following:
 
 
 <p align="center">
- <img height="350" src="https://user-images.githubusercontent.com/64502909/140434634-58d6cccc-f021-45fd-9644-e4b78bc5b1b0.png"/>
- <img height="350" src="https://user-images.githubusercontent.com/64502909/140434638-e84bbfa9-77ff-4032-bf19-a042de345a85.png"/>
+ <img height="250" src="https://user-images.githubusercontent.com/64502909/140434634-58d6cccc-f021-45fd-9644-e4b78bc5b1b0.png"/>
+ <img height="250" src="https://user-images.githubusercontent.com/64502909/140434638-e84bbfa9-77ff-4032-bf19-a042de345a85.png"/>
 </p>
 
 <p align="center">

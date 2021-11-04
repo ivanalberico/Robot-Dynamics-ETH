@@ -16,11 +16,14 @@ The topics covered in the exercises are the following:
  <img height="350" src="https://user-images.githubusercontent.com/64502909/140434623-7a0517a2-b99a-49da-bef2-a09deaa3479f.png"/>
 </p>
 
+<br/><br/>  
 
 <p align="center">
  <img height="250" src="https://user-images.githubusercontent.com/64502909/140434634-58d6cccc-f021-45fd-9644-e4b78bc5b1b0.png"/>
  <img height="250" src="https://user-images.githubusercontent.com/64502909/140434638-e84bbfa9-77ff-4032-bf19-a042de345a85.png"/>
 </p>
+
+<br/><br/>  
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/64502909/140434641-660d732a-99ca-4095-9577-14fd00f23916.png"/>

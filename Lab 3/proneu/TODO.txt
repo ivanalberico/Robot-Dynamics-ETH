@@ -1,0 +1,124 @@
+%%%
+%   TODO:
+%   
+%       1.  Use MATLAB graph() tools to create the graph of the kinematic 
+%           tree when generating the system dynamics, and prompt for before 
+%           contining to compute the EoM.
+%
+%  [X]  2.  Create a graphic to plot the matrix sparsity pattern.
+%
+%  [X]  3.  EoM generation methods using 'newteul', 'proneu', 'eulag', 'featherstone'.
+%
+%       4.  Re-factor the symbols-to-latex functions.
+%
+%       5. Also re-factor the "create vector arrow" functions.
+%
+%  [X]  6. store the entire model in a MAT file for easy loading at
+%       other times.
+%
+%       7. Compute U using g.
+%
+%  [X]  8. Save mass matrix sparsity matrix
+%
+%  [X]  9. Handle custom parametrized symbolic specification of Bi_Theta_Bi
+%
+%  [X]  10. Add a model class which does not represent a model but creates
+%           place holders for users to input their own derived analytically
+%           derived symbolic expressions. This allows only the numerical
+%           generator plus visualization pipeline to be used.
+%
+%  [X]  11. Figure out how to remove the use of the internal "systemdef"
+%           data.
+%
+%  [X]  12. Cleanup of ERROR and WARN messages
+%
+%  [X]  13. cleanup how sim sends data to viz.
+%
+%  [X]  14. Specify controller parameter values;
+%
+%  [X]  15. Make the RobotModel constructor only generate everyhting but
+%           not compute the model if no method has been specified.
+%
+%       16. Store each body's gravity force through CoM.
+% 
+%  [X]  17. Make it so that bodies w/o specified geometry and mass just become
+%           coordinate frames.
+% 
+%  [X]  18. Add attributes to RigidBody objects to make a distinction if
+%           they are end-effectors.
+% 
+%  [X]  19. Special simplifications for quaternions
+% 
+%       20. Cleanup how numeric parameter substitutions can be used.
+% 
+%       21. Add time sample decimation so controllers can have different
+%           update rates than that of the simulation.
+% 
+%       22. Implement a time delay so that states given to controller
+%           functions can be delayed by the sensing speed plus jitter.
+%           This should also be configurable.
+%
+
+%%
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'quaternion', 'method', 'proneu');
+% robot.dynamics.symbols.F
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'angleaxis', 'method', 'proneu');
+% robot.dynamics.symbols.F
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'taitbryanzyx', 'method', 'proneu');
+% robot.dynamics.symbols.F
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'cardanxyz', 'method', 'proneu');
+% robot.dynamics.symbols.F
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'eulerzyz', 'method', 'proneu');
+% robot.dynamics.symbols.F
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'eulerzxz', 'method', 'proneu');
+% robot.dynamics.symbols.F
+
+% robot = RobotModel(body, ftel, q_j, dq_j, tau, I_a_g, 'type', 'floating', 'orientation', 'custom', 'method', 'proneu', 'F', sym(eye(3)));
+% robot.dynamics.symbols.F
+
+%%
+
+%%%
+%   State-Space Representation of an ODE system:
+%
+%  [ I   0    ] [ dq  ]   [ dq      ]
+%  [ 0   M(q) ] [ ddq ] = [ f(q,dq) ]
+%
+%%%
+
+%% Moreau Time-Stepping
+
+% 1. Identify which bodies will collide.
+% 
+% 2. Compute the normal gap functions g_Ni(q) for each pending collission i.
+% 
+% 3. Check if contact is closed or open. 
+% 
+% 4. Compute the contact Jacobian I_J_Ci for each pending collission i.
+% 
+% 5. 
+% 
+% 
+% Set system dimensions
+%            obj.Nx = 15;
+%            obj.Nq = 8;
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+

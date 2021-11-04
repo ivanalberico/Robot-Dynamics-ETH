@@ -1,0 +1,162 @@
+%==============================================================================
+% ETHASL -- (ethasl.sty) Style file
+% A LaTeX package providing new style definitions and commands.
+% This package is based on the ETHIMRT package by Eric A. Mueller
+%==============================================================================
+\def\Presentation@Version{1.1}
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{ethasl}[2008/07/01, v. \Presentation@Version]
+\typeout{providing new style definitions and commands ---}
+
+\usepackage{colortbl}
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+
+%%%%%%%
+\newif\ifbt
+\DeclareOption{bt}{\global\bttrue}
+\DeclareOption{mt}{\global\btfalse}
+
+\newif\ifhs
+\DeclareOption{hs}{\global\hstrue}
+\DeclareOption{fs}{\global\hsfalse}
+
+\newif\ifingerman
+\DeclareOption{german}{\global\ingermantrue}
+\DeclareOption{english}{\global\ingermanfalse}
+
+
+\ExecuteOptions{bt,hs,german}
+\ProcessOptions
+
+
+%%%%%%%
+\newcommand{\@headtitle}{}
+\newcommand{\headtitle}[1]{\gdef\@headtitle{#1}}
+
+\newcommand{\@subtitle}{}
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+
+\newcommand{\@keywords}{}
+\newcommand{\keywords}[1]{\gdef\@keywords{#1}}
+
+\newcommand{\@datepub}{}
+\newcommand{\datepub}[1]{\gdef\@datepub{#1}}
+
+\newcommand{\@supervisionA}{}
+\newcommand{\supervisionA}[1]{\gdef\@supervisionA{#1}}
+
+\newif\ifsupervisionB
+\newcommand{\@supervisionB}{}
+\newcommand{\supervisionB}[1]{\gdef\@supervisionB{#1}\supervisionBtrue}
+
+\newif\ifsupervisionC
+\newcommand{\@supervisionC}{}
+\newcommand{\supervisionC}[1]{\gdef\@supervisionC{#1}\supervisionCtrue}
+
+\newcommand{\@studentA}{}
+\newcommand{\studentA}[1]{\gdef\@studentA{#1}}
+
+\newif\ifstudentB
+\newcommand{\@studentB}{}
+\newcommand{\studentB}[1]{\gdef\@studentB{#1}\studentBtrue}
+
+\newif\ifstudentC
+\newcommand{\@studentC}{}
+\newcommand{\studentC}[1]{\gdef\@studentC{#1}\studentCtrue}
+
+
+%%%%%%%
+% Definition of title page
+
+\renewcommand{\maketitle}{
+
+\pagestyle{empty}
+ 
+\begin{center}
+\hspace{0.02\textwidth}
+\parbox[c][\textheight][t]{0.97\textwidth}{
+\begin{center}
+
+% logos
+\vspace*{-3.2cm}
+
+\hspace*{-3.5cm}
+\begin{tabular}{lp{6cm}c}
+\multirow{3}{8cm}{\includegraphics[height=1.8cm]{pics/ethlogo.eps}} & & \multirow{3}{4cm}{\vspace{-1cm}\begin{flushright}\includegraphics[height=1cm]{pics/asllogo.eps}\\Autonomous Systems Lab\\
+ Prof. Roland Siegwart\end{flushright}}\\
+ & & \\
+ & & \\
+ & & \\
+\end{tabular}
+
+% line
+\hspace*{-124pt}
+\textcolor{grey}{\rule{595pt}{0.1pt}}
+
+\vspace*{1.0cm}
+
+\if \@headtitle 
+\else 
+	{\huge \@headtitle}\\[3ex]
+\fi
+
+\vspace{22cm}
+
+% line
+\hspace*{-124pt}
+\textcolor{grey}{\rule{595pt}{0.1pt}}
+
+\vspace*{0.3cm}
+\hspace*{-3.3cm}
+\begin{tabular}{p{8cm}p{6cm}p{4cm}}
+
+	& & 
+
+ 		\ifstudentB
+ 			{\bf Authors: }
+ 		\else
+ 			{\bf Author: }
+ 		\fi
+	 \\
+	 www.asl.ethz.ch& & \@studentA \\
+	 www.leggedrobotics.ethz.ch& & \if \@studentB \else \@studentB\fi \\
+	 & & \if \@studentC \else \@studentC\fi
+\end{tabular}
+
+% title	
+\vspace{-18cm}	
+{\Huge \bf \@title \par}
+
+% subtitle
+\if \@subtitle 
+\else 
+	\vspace{1cm}
+	\huge \@subtitle
+\fi
+
+
+\if \@keywords
+\else  
+	\vspace{1.5cm}
+	\Large  keywords: \it \@keywords
+\fi
+
+\vspace{1.5cm}
+
+\if \@datepub
+\else  
+	\vspace{1.5cm}
+	{\Large \bf \@datepub}\\[3ex]
+\fi
+
+
+\end{center}
+}
+\end{center}
+
+\cleardoublepage
+
+}
+
+\newcommand{\labelgleichung}[2]{\begin{equation} \label{#2} {#1} \end{equation}}
+\newcommand{\gleichung}[1]{\begin{equation} {#1} \end{equation}}

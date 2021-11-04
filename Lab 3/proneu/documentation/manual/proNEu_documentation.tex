@@ -1,0 +1,148 @@
+%=================================================================
+% This template is based on IMRT Latex template by Eric A. Mueller
+%================================================================= 
+
+\documentclass[10pt,twoside,a4paper]{report}
+ \usepackage[mt,hs,english]{ethasl}   % New styles and commands
+                                      % Options: 	bt/mt: Bachelorthesis/Masterthesis
+                                      %						fs/hs: Fr�hlingssemester/Herbstsemester
+                                      %						german/english: Deutsch/English
+
+% \includeonly{}                      % Quick formatting
+% \usepackage[draft]{graphicx}        % Quick formatting
+
+ \usepackage{a4}                      % Paper size
+ \usepackage[latin1]{inputenc}        % Keybord settings
+ \usepackage{amsmath}                 % Additional math functionality
+ \usepackage{amssymb}                 % Additional math functionality
+ \usepackage{graphicx}                % EPS figures
+ \usepackage[dvips]{epsfig}           % EPS figures
+ \usepackage{float}                   % Placement of floating objects
+ \usepackage{fancyhdr}                % Headings
+ \usepackage{rotating}
+ \usepackage{multirow}
+ \usepackage{url}
+ \usepackage{colortbl}
+ \usepackage{ifpdf}
+ \usepackage{subfigure}
+
+
+
+ \usepackage{hyperref}
+ \usepackage{color}
+
+ \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+ \definecolor{black}{rgb}{0,0,0}
+ \definecolor{white}{rgb}{1,1,1}
+
+ \definecolor{darkred}{rgb}{0.5,0,0}
+ \definecolor{darkgreen}{rgb}{0,0.5,0}
+ \definecolor{darkblue}{rgb}{0,0,0.5}
+ %\definecolor{zebg}{rgb}{1,1,.8} %elfenbeinfarbig
+ 
+ \hypersetup{colorlinks
+	,linkcolor=black
+	,filecolor=black
+	,urlcolor=black
+	,citecolor=black
+ }
+
+
+\ifpdf
+\usepackage[update]{epstopdf}
+\else
+\fi
+% *** GRAPHICS RELATED PACKAGES ***
+%
+
+%\usepackage[pdftex]{graphicx}
+
+%%%%%%%%%%%%%%
+% My commands
+%%%%%%%%%%%%%%
+\newcommand{\figref}[1]{Fig. \ref{#1}}
+\newcommand{\secref}[1]{Section \ref{#1}}
+\newcommand{\neweulm}{\mbox{Neweul-M$^2$}}
+\newcommand{\proneu}{\textit{pro}NEu}
+
+% \usepackage{german}                  % German language
+% \usepackage{ae}                      % German specials
+
+%---------------------------------------------------------------------------
+
+ \setlength{\parindent}{0em}                   % Disable parindent
+ \rhead[\thepage]{\nouppercase{\rightmark}}    % Special headings
+ \lhead[\nouppercase{\leftmark}]{\thepage}     % Special headings
+ \cfoot{}                                      % Special headings
+
+%---------------------------------------------------------------------------
+
+ \title{proNEu Documentation}
+ \headtitle{MATLAB Tool}
+ \subtitle{Derivation of Analytical \\ \textbf{Kinematics} \& \textbf{Dynamics}}
+ \keywords{dynamics, global kinematics, analytical equations of motion, projected Newton-Euler, simple MATLAB tool}
+ \datepub{v1.1, Mar. 2012}
+ \studentA{Marco Hutter}
+ \studentB{Christian Gehring}
+% \studentC{Student 3}
+ 
+ 
+
+%\supervisionA{Andreas Muster}
+%\supervisionB{Supervisor B}
+%\supervisionC{Supervisor C}
+ 
+
+%===========================================================================
+\begin{document}
+
+%---------------------------------------------------------------------------
+% Title page
+
+ \maketitle
+ \pagestyle{plain}
+ \pagenumbering{roman}
+
+%---------------------------------------------------------------------------
+% Preamble
+
+ \include{sections/preamble}
+
+ \pagestyle{headings}                 % Default headings
+ \pagestyle{fancy}                   % Special headings
+ \pagenumbering{arabic}
+
+%---------------------------------------------------------------------------
+% Chapters
+%\input{sections/introduction}
+\include{sections/theory}
+\cleardoublepage
+\include{sections/matlab}
+\cleardoublepage
+\include{sections/examples}
+
+% \cleardoublepage
+% \include{}
+% \cleardoublepage
+% \include{}
+% \cleardoublepage
+% ...
+%
+%---------------------------------------------------------------------------
+% Appendix
+
+% \appendix
+% \include{appendix}
+%
+%---------------------------------------------------------------------------
+% Literature
+
+% \include{bibliography}
+\bibliographystyle{unsrt}
+\bibliography{sections/references}
+
+%---------------------------------------------------------------------------
+
+\end{document}
+%===========================================================================
+

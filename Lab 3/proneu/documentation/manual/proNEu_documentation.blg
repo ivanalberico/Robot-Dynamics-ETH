@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: proNEu_documentation.aux
+A level-1 auxiliary file: sections/preamble.aux
+A level-1 auxiliary file: sections/theory.aux
+A level-1 auxiliary file: sections/matlab.aux
+A level-1 auxiliary file: sections/examples.aux
+The style file: unsrt.bst
+Database file #1: sections/references.bib
+You've used 1 entry,
+            1791 wiz_defined-function locations,
+            456 strings with 3853 characters,
+and the built_in function-call counts, 270 in all, are:
+= -- 22
+> -- 14
+< -- 0
++ -- 5
+- -- 4
+* -- 26
+:= -- 50
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 9
+empty$ -- 23
+format.name$ -- 4
+if$ -- 53
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 1
+pop$ -- 1
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 3
+stack$ -- 0
+substring$ -- 19
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 3
+width$ -- 2
+write$ -- 13
